@@ -9,6 +9,6 @@ def divide(a, b):
 import subprocess
 
 def run_command(cmd):
-    # BUG: penggunaan shell=True berbahaya (Command Injection)
-    result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
+    # Fixed: No shell=True, use list for args
+    result = subprocess.run(cmd.split(), capture_output=True, text=True)  # Asumsi cmd string aman
     return result.stdout
