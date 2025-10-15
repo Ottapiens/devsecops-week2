@@ -22,10 +22,6 @@ jobs:
           pip install -r requirements.txt
           pip install pytest bandit
 
-      - name: Set PYTHONPATH
-        run: echo "PYTHONPATH=src" >> $GITHUB_ENV
-
-
       - name: Run Unit Tests
         run: pytest
 
